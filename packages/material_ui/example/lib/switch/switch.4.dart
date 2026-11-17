@@ -123,6 +123,7 @@ class _SwitchThemeAdaptation extends Adaptation<SwitchThemeData> {
       case .fuchsia:
       case .linux:
       case .windows:
+      case .ohos:
         return defaultValue;
       case .iOS:
       case .macOS:

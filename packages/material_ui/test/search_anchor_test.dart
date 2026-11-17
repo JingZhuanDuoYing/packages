@@ -4522,6 +4522,7 @@ void main() {
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
+        case TargetPlatform.ohos:
           expect(find.byType(AdaptiveTextSelectionToolbar), findsOneWidget);
       }
     },

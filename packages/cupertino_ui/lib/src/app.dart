@@ -511,6 +511,7 @@ class CupertinoScrollBehavior extends ScrollBehavior {
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
       case TargetPlatform.iOS:
+      case TargetPlatform.ohos:
         return child;
     }
   }

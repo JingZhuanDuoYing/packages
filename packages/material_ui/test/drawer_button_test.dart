@@ -162,6 +162,7 @@ void main() {
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:
+      case TargetPlatform.ohos:
         expectedLabel = null;
     }
     expect(
@@ -433,6 +434,7 @@ void main() {
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:
+      case TargetPlatform.ohos:
         expectedLabel = null;
     }
     expect(

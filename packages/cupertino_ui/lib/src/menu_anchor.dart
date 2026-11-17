@@ -40,6 +40,7 @@ bool get _isCupertino {
     case TargetPlatform.fuchsia:
     case TargetPlatform.linux:
     case TargetPlatform.windows:
+    case TargetPlatform.ohos:
       return false;
   }
 }
@@ -2532,6 +2533,7 @@ class _CupertinoMenuItemInteractionHandlerState
     switch (defaultTargetPlatform) {
       case TargetPlatform.iOS:
       case TargetPlatform.android:
+      case TargetPlatform.ohos:
         HapticFeedback.selectionClick();
       case TargetPlatform.fuchsia:
       case TargetPlatform.linux:

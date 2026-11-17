@@ -362,6 +362,7 @@ class _MaterialScrollbarState extends RawScrollbarState<_MaterialScrollbar> {
       case TargetPlatform.fuchsia:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:
+      case TargetPlatform.ohos:
         _useAndroidScrollbar = false;
     }
     super.didChangeDependencies();

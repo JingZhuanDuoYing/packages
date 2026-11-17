@@ -1,3 +1,7 @@
+## 1.11.2-ohos.1
+
+- Adds OpenHarmony (`TargetPlatform.ohos`) support to all platform-dependent code paths, so the package compiles and behaves correctly with the OpenHarmony Flutter SDK. `ohos` follows the closest non-Android behavior unless the OpenHarmony SDK defines otherwise.
+
 ## 1.11.1
 
 - Fixes `SnackBarThemeData.lerp` dropping `showCloseIcon`.

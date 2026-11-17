@@ -2966,6 +2966,7 @@ void main() {
         case TargetPlatform.android:
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
+        case TargetPlatform.ohos:
           expect(mnemonic0.data, equals('Ctrl+A'));
           expect(mnemonic1.data, equals('Shift+B'));
           expect(mnemonic2.data, equals('Alt+C'));
@@ -3075,6 +3076,7 @@ void main() {
         case TargetPlatform.android:
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
+        case TargetPlatform.ohos:
           expect(mnemonic0.data, equals('Ctrl+A'));
           expect(mnemonic1.data, equals('Alt+B'));
           expect(mnemonic2.data, equals('Meta+C'));
@@ -4388,6 +4390,7 @@ void main() {
           case TargetPlatform.fuchsia:
           case TargetPlatform.linux:
           case TargetPlatform.windows:
+          case TargetPlatform.ohos:
             expectedCtrl = 'Ctrl';
             expectedMeta = defaultTargetPlatform == TargetPlatform.windows ? 'Win' : 'Meta';
             expectedAlt = 'Alt';
@@ -4415,6 +4418,7 @@ void main() {
           case TargetPlatform.fuchsia:
           case TargetPlatform.linux:
           case TargetPlatform.windows:
+          case TargetPlatform.ohos:
             allExpected = <String>[
               expectedAlt,
               expectedCtrl,
@@ -4469,7 +4473,8 @@ void main() {
             TargetPlatform.android ||
             TargetPlatform.fuchsia ||
             TargetPlatform.linux ||
-            TargetPlatform.windows => ('Ctrl', '+'),
+            TargetPlatform.windows ||
+            TargetPlatform.ohos => ('Ctrl', '+'),
             TargetPlatform.iOS || TargetPlatform.macOS => ('⌃', ' '),
           };
 

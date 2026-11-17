@@ -269,7 +269,8 @@ class Drawer extends StatelessWidget {
       TargetPlatform.android ||
       TargetPlatform.fuchsia ||
       TargetPlatform.linux ||
-      TargetPlatform.windows => semanticLabel ?? MaterialLocalizations.of(context).drawerLabel,
+      TargetPlatform.windows ||
+      TargetPlatform.ohos => semanticLabel ?? MaterialLocalizations.of(context).drawerLabel,
     };
     final bool useMaterial3 = Theme.of(context).useMaterial3;
     final isDrawerStart = DrawerController.maybeOf(context)?.alignment != DrawerAlignment.end;
@@ -691,7 +692,10 @@ class DrawerControllerState extends State<DrawerController> with SingleTickerPro
 
   Widget _buildDrawer(BuildContext context) {
     final bool isDesktop = switch (Theme.of(context).platform) {
-      TargetPlatform.android || TargetPlatform.iOS || TargetPlatform.fuchsia => false,
+      TargetPlatform.android ||
+      TargetPlatform.iOS ||
+      TargetPlatform.fuchsia ||
+      TargetPlatform.ohos => false,
       TargetPlatform.macOS || TargetPlatform.linux || TargetPlatform.windows => true,
     };
 
@@ -732,7 +736,8 @@ class DrawerControllerState extends State<DrawerController> with SingleTickerPro
         TargetPlatform.macOS ||
         TargetPlatform.fuchsia ||
         TargetPlatform.linux ||
-        TargetPlatform.windows => false,
+        TargetPlatform.windows ||
+        TargetPlatform.ohos => false,
       };
 
       final Color scrimColor =

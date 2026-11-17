@@ -105,7 +105,11 @@ void main() {
         expect(builtWidget, isNull);
       },
       variant: TargetPlatformVariant.all(
-        excluding: <TargetPlatform>{TargetPlatform.iOS, TargetPlatform.android},
+        excluding: <TargetPlatform>{
+          TargetPlatform.iOS,
+          TargetPlatform.android,
+          TargetPlatform.ohos,
+        },
       ),
     );
   });

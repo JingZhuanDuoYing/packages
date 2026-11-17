@@ -198,6 +198,7 @@ class CupertinoAdaptiveTextSelectionToolbar extends StatelessWidget {
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
       case TargetPlatform.iOS:
+      case TargetPlatform.ohos:
         return buttonItems.map((ContextMenuButtonItem buttonItem) {
           return CupertinoTextSelectionToolbarButton.buttonItem(buttonItem: buttonItem);
         });
@@ -224,6 +225,7 @@ class CupertinoAdaptiveTextSelectionToolbar extends StatelessWidget {
       case TargetPlatform.android:
       case TargetPlatform.iOS:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.ohos:
         return CupertinoTextSelectionToolbar(
           anchorAbove: anchors.primaryAnchor,
           anchorBelow: anchors.secondaryAnchor ?? anchors.primaryAnchor,

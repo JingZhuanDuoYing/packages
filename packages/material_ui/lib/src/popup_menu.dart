@@ -1212,6 +1212,7 @@ Future<T?> showMenu<T>({
     case TargetPlatform.fuchsia:
     case TargetPlatform.linux:
     case TargetPlatform.windows:
+    case TargetPlatform.ohos:
       semanticLabel ??= MaterialLocalizations.of(context).popupMenuLabel;
   }
 

@@ -829,7 +829,8 @@ class AlertDialog extends StatelessWidget {
       TargetPlatform.android ||
       TargetPlatform.fuchsia ||
       TargetPlatform.linux ||
-      TargetPlatform.windows => semanticLabel ?? MaterialLocalizations.of(context).alertDialogLabel,
+      TargetPlatform.windows ||
+      TargetPlatform.ohos => semanticLabel ?? MaterialLocalizations.of(context).alertDialogLabel,
     };
 
     // The paddingScaleFactor is used to adjust the padding of Dialog's
@@ -1058,6 +1059,7 @@ class _AdaptiveAlertDialog extends AlertDialog {
       case TargetPlatform.fuchsia:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
+      case TargetPlatform.ohos:
         break;
       case TargetPlatform.iOS:
       case TargetPlatform.macOS:
@@ -1352,6 +1354,7 @@ class SimpleDialog extends StatelessWidget {
       case TargetPlatform.fuchsia:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
+      case TargetPlatform.ohos:
         label ??= MaterialLocalizations.of(context).dialogLabel;
     }
 
@@ -1801,6 +1804,7 @@ Future<T?> showAdaptiveDialog<T>({
     case TargetPlatform.fuchsia:
     case TargetPlatform.linux:
     case TargetPlatform.windows:
+    case TargetPlatform.ohos:
       return showDialog<T>(
         context: context,
         builder: builder,

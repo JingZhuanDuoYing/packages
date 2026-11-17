@@ -3337,6 +3337,7 @@ void main() {
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
+        case TargetPlatform.ohos:
           expect(controller.selection.baseOffset, 2);
           expect(controller.selection.extentOffset, 11);
       }
@@ -3365,6 +3366,7 @@ void main() {
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
+        case TargetPlatform.ohos:
           expect(controller.selection.baseOffset, 0);
           expect(controller.selection.extentOffset, 11);
       }
@@ -3753,6 +3755,7 @@ void main() {
       case TargetPlatform.fuchsia:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
+      case TargetPlatform.ohos:
         expect(controller.selection.baseOffset, toOffset);
         expect(controller.selection.extentOffset, testValue.length);
     }
@@ -16297,6 +16300,7 @@ void main() {
       case TargetPlatform.fuchsia:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
+      case TargetPlatform.ohos:
         expect(controller.selection.baseOffset, 35);
     }
     expect(controller.selection.extentOffset, 20);
@@ -16789,6 +16793,7 @@ void main() {
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
+        case TargetPlatform.ohos:
           expect(controller.selection, const TextSelection.collapsed(offset: 8));
           expect(find.text('Cut'), findsNothing);
           expect(find.text('Copy'), findsNothing);
@@ -16814,6 +16819,7 @@ void main() {
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
+        case TargetPlatform.ohos:
           expect(controller.selection, const TextSelection.collapsed(offset: 8));
           expect(find.text('Cut'), findsNothing);
           expect(find.text('Copy'), findsNothing);
@@ -16861,6 +16867,7 @@ void main() {
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
+        case TargetPlatform.ohos:
           expect(controller.selection, const TextSelection.collapsed(offset: 8));
           expect(find.text('Cut'), findsNothing);
           expect(find.text('Copy'), findsNothing);
@@ -17413,7 +17420,11 @@ void main() {
           );
         },
         variant: TargetPlatformVariant.all(
-          excluding: <TargetPlatform>{TargetPlatform.iOS, TargetPlatform.android},
+          excluding: <TargetPlatform>{
+            TargetPlatform.iOS,
+            TargetPlatform.android,
+            TargetPlatform.ohos,
+          },
         ),
       );
     });
@@ -18141,6 +18152,7 @@ void main() {
                 case TargetPlatform.iOS:
                 case TargetPlatform.android:
                 case TargetPlatform.fuchsia:
+                case TargetPlatform.ohos:
                   expect(focusNode.hasPrimaryFocus, equals(!kIsWeb));
                 case TargetPlatform.linux:
                 case TargetPlatform.macOS:
@@ -18206,6 +18218,7 @@ void main() {
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
+        case TargetPlatform.ohos:
           expect(spellCheckToolbar, isA<SpellCheckSuggestionsToolbar>());
       }
     },
@@ -18235,6 +18248,7 @@ void main() {
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
+        case TargetPlatform.ohos:
           expectedConfiguration = SpellCheckConfiguration(
             misspelledTextStyle: TextField.materialMisspelledTextStyle,
             spellCheckService: DefaultSpellCheckService(),
@@ -18988,6 +19002,7 @@ void main() {
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
+        case TargetPlatform.ohos:
           expect(find.byType(AdaptiveTextSelectionToolbar), findsOneWidget);
       }
     },
@@ -19543,6 +19558,7 @@ void _expectCupertinoToolbarForPartialSelection() {
     case TargetPlatform.fuchsia:
     case TargetPlatform.linux:
     case TargetPlatform.windows:
+    case TargetPlatform.ohos:
       expect(find.byType(CupertinoButton), findsNWidgets(4));
       expect(find.text('Cut'), findsOneWidget);
       expect(find.text('Copy'), findsOneWidget);
@@ -19578,6 +19594,7 @@ void _expectCupertinoToolbarForFullSelection() {
     case TargetPlatform.linux:
     case TargetPlatform.macOS:
     case TargetPlatform.windows:
+    case TargetPlatform.ohos:
       expect(find.byType(CupertinoButton), findsNWidgets(3));
       expect(find.text('Cut'), findsOneWidget);
       expect(find.text('Copy'), findsOneWidget);
@@ -19607,6 +19624,7 @@ void _expectCupertinoToolbarForCollapsedSelection() {
     case TargetPlatform.linux:
     case TargetPlatform.windows:
     case TargetPlatform.macOS:
+    case TargetPlatform.ohos:
       expect(find.byType(CupertinoButton), findsNWidgets(1));
       expect(find.text('Paste'), findsOneWidget);
   }
@@ -19637,6 +19655,7 @@ void _expectMaterialToolbarForPartialSelection() {
     case TargetPlatform.fuchsia:
     case TargetPlatform.linux:
     case TargetPlatform.windows:
+    case TargetPlatform.ohos:
       expect(find.byType(TextButton), findsNWidgets(4));
       expect(find.text('Cut'), findsOneWidget);
       expect(find.text('Copy'), findsOneWidget);
@@ -19665,6 +19684,7 @@ void _expectMaterialToolbarForFullSelection() {
     case TargetPlatform.linux:
     case TargetPlatform.macOS:
     case TargetPlatform.windows:
+    case TargetPlatform.ohos:
       expect(find.byType(TextButton), findsNWidgets(3));
       expect(find.text('Cut'), findsOneWidget);
       expect(find.text('Copy'), findsOneWidget);

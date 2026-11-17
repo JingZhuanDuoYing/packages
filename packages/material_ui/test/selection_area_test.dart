@@ -26,6 +26,7 @@ void main() {
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.ohos:
         expect(region.selectionControls, materialTextSelectionHandleControls);
       case TargetPlatform.iOS:
         expect(region.selectionControls, cupertinoTextSelectionHandleControls);

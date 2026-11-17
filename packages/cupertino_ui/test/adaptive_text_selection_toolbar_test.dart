@@ -55,6 +55,7 @@ void main() {
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
       case TargetPlatform.iOS:
+      case TargetPlatform.ohos:
         expect(find.byType(CupertinoTextSelectionToolbar), findsOneWidget);
         expect(find.byType(CupertinoDesktopTextSelectionToolbar), findsNothing);
       case TargetPlatform.macOS:
@@ -135,6 +136,7 @@ void main() {
         case TargetPlatform.android:
         case TargetPlatform.fuchsia:
         case TargetPlatform.iOS:
+        case TargetPlatform.ohos:
           expect(find.byType(CupertinoTextSelectionToolbarButton), findsOneWidget);
         case TargetPlatform.macOS:
         case TargetPlatform.linux:
@@ -192,6 +194,7 @@ void main() {
 
         case TargetPlatform.fuchsia:
         case TargetPlatform.iOS:
+        case TargetPlatform.ohos:
           expect(find.byType(CupertinoTextSelectionToolbarButton), findsNWidgets(6));
           expect(find.text('Cut'), findsOneWidget);
           expect(find.text('Copy'), findsOneWidget);
@@ -254,6 +257,7 @@ void main() {
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
       case TargetPlatform.iOS:
+      case TargetPlatform.ohos:
         expect(find.byType(CupertinoTextSelectionToolbarButton), findsOneWidget);
         expect(find.byType(CupertinoDesktopTextSelectionToolbarButton), findsNothing);
       case TargetPlatform.macOS:

@@ -1142,6 +1142,7 @@ class CupertinoTextField extends StatefulWidget {
           switch (defaultTargetPlatform) {
             case TargetPlatform.android:
             case TargetPlatform.iOS:
+            case TargetPlatform.ohos:
               return CupertinoTextMagnifier(controller: controller, magnifierInfo: magnifierInfo);
             case TargetPlatform.fuchsia:
             case TargetPlatform.linux:
@@ -1324,6 +1325,7 @@ class _CupertinoTextFieldState extends State<CupertinoTextField>
       case TargetPlatform.windows:
       case TargetPlatform.fuchsia:
       case TargetPlatform.android:
+      case TargetPlatform.ohos:
         if (cause == SelectionChangedCause.longPress) {
           _editableText.bringIntoView(selection.extent);
         }
@@ -1333,6 +1335,7 @@ class _CupertinoTextFieldState extends State<CupertinoTextField>
       case TargetPlatform.iOS:
       case TargetPlatform.fuchsia:
       case TargetPlatform.android:
+      case TargetPlatform.ohos:
         break;
       case TargetPlatform.macOS:
       case TargetPlatform.linux:
@@ -1541,6 +1544,7 @@ class _CupertinoTextFieldState extends State<CupertinoTextField>
       case TargetPlatform.iOS:
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.ohos:
         textSelectionControls ??= cupertinoTextSelectionHandleControls;
       case TargetPlatform.linux:
       case TargetPlatform.macOS:

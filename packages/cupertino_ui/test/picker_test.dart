@@ -569,7 +569,15 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(selectedItems, <int>[1]);
-        expect(systemCalls, isEmpty);
+        // On OHOS the framework itself reports scroll lifecycle events over
+        // SystemChannels.platform, so only haptic/sound calls are checked here.
+        expect(
+          systemCalls.where(
+            (MethodCall call) =>
+                !call.method.startsWith('Scroll.') && call.method != 'Scroll.Activity',
+          ),
+          isEmpty,
+        );
       },
       variant: TargetPlatformVariant(
         TargetPlatform.values

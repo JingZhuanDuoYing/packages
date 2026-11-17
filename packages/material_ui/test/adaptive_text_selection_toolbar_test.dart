@@ -51,6 +51,7 @@ void main() {
 
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
+      case TargetPlatform.ohos:
         expect(find.byType(TextSelectionToolbar), findsOneWidget);
         expect(find.byType(CupertinoTextSelectionToolbar), findsNothing);
         expect(find.byType(DesktopTextSelectionToolbar), findsNothing);
@@ -145,6 +146,7 @@ void main() {
       switch (defaultTargetPlatform) {
         case TargetPlatform.android:
         case TargetPlatform.fuchsia:
+        case TargetPlatform.ohos:
           expect(find.byType(TextSelectionToolbarTextButton), findsOneWidget);
         case TargetPlatform.iOS:
           expect(find.byType(CupertinoTextSelectionToolbarButton), findsOneWidget);
@@ -210,6 +212,22 @@ void main() {
           expect(findLiveTextButton(), findsOneWidget);
           expect(
             findMaterialOverflowBackButton(),
+            findsOneWidget,
+          ); // Material overflow buttons are not TextSelectionToolbarTextButton.
+
+        case TargetPlatform.ohos:
+          // Ohos shows the Material toolbar with the non-Android button order,
+          // which pushes Share into the overflow menu.
+          expect(find.byType(TextSelectionToolbarTextButton), findsNWidgets(6));
+          expect(find.text('Cut'), findsOneWidget);
+          expect(find.text('Copy'), findsOneWidget);
+          expect(find.text('Paste'), findsOneWidget);
+          expect(find.text('Select all'), findsOneWidget);
+          expect(find.text('Look Up'), findsOneWidget);
+          expect(find.text('Search Web'), findsOneWidget);
+          expect(find.text('Share'), findsNothing);
+          expect(
+            findMaterialOverflowNextButton(),
             findsOneWidget,
           ); // Material overflow buttons are not TextSelectionToolbarTextButton.
 
@@ -355,6 +373,7 @@ void main() {
           case TargetPlatform.fuchsia:
           case TargetPlatform.linux:
           case TargetPlatform.windows:
+          case TargetPlatform.ohos:
             expect(buttonTypes, contains(ContextMenuButtonType.selectAll));
           case TargetPlatform.macOS:
             expect(buttonTypes, isNot(contains(ContextMenuButtonType.selectAll)));
@@ -375,6 +394,7 @@ void main() {
           case TargetPlatform.fuchsia:
           case TargetPlatform.linux:
           case TargetPlatform.windows:
+          case TargetPlatform.ohos:
             expect(buttonTypes, contains(ContextMenuButtonType.selectAll));
           case TargetPlatform.iOS:
           case TargetPlatform.macOS:
@@ -420,6 +440,7 @@ void main() {
       switch (defaultTargetPlatform) {
         case TargetPlatform.fuchsia:
         case TargetPlatform.android:
+        case TargetPlatform.ohos:
           expect(find.byType(TextSelectionToolbarTextButton), findsOneWidget);
           expect(find.byType(CupertinoTextSelectionToolbarButton), findsNothing);
           expect(find.byType(DesktopTextSelectionToolbarButton), findsNothing);

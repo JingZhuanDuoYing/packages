@@ -287,6 +287,7 @@ class _CupertinoPickerState extends State<CupertinoPicker> {
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:
+      case TargetPlatform.ohos:
         // No haptic feedback on these platforms.
         return;
     }

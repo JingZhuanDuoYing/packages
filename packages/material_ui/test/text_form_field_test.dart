@@ -1223,6 +1223,7 @@ void main() {
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
+        case TargetPlatform.ohos:
           expect(controller.selection, const TextSelection.collapsed(offset: 8));
           expect(find.text('Cut'), findsNothing);
           expect(find.text('Copy'), findsNothing);
@@ -1248,6 +1249,7 @@ void main() {
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
+        case TargetPlatform.ohos:
           expect(controller.selection, const TextSelection.collapsed(offset: 8));
           expect(find.text('Cut'), findsNothing);
           expect(find.text('Copy'), findsNothing);
@@ -1875,6 +1877,7 @@ void main() {
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
+        case TargetPlatform.ohos:
           expect(find.byType(AdaptiveTextSelectionToolbar), findsOneWidget);
       }
     },

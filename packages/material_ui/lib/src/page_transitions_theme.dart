@@ -950,6 +950,7 @@ class PageTransitionsTheme with Diagnosticable {
   static const Map<TargetPlatform, PageTransitionsBuilder> _defaultBuilders =
       <TargetPlatform, PageTransitionsBuilder>{
         TargetPlatform.android: PredictiveBackPageTransitionsBuilder(),
+        TargetPlatform.ohos: FadeForwardsPageTransitionsBuilder(),
         TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
         TargetPlatform.macOS: CupertinoPageTransitionsBuilder(),
         TargetPlatform.windows: ZoomPageTransitionsBuilder(),
@@ -1072,7 +1073,8 @@ class _PageTransitionsThemeTransitionsState<T> extends State<_PageTransitionsThe
           TargetPlatform.fuchsia ||
           TargetPlatform.windows ||
           TargetPlatform.macOS ||
-          TargetPlatform.linux => const ZoomPageTransitionsBuilder(),
+          TargetPlatform.linux ||
+          TargetPlatform.ohos => const ZoomPageTransitionsBuilder(),
         };
     return matchingBuilder.buildTransitions<T>(
       widget.route,
